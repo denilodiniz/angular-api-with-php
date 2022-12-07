@@ -9,4 +9,7 @@
     //Conexão com o Banco de Dados
     $connection = mysqli_connect($url, $user, $password, $base);
 
+    //Organizar caracteres especiais
+    mysqli_set_charset($connection, "utf-8");
+
 ?>
