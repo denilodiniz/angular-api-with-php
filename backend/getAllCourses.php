@@ -7,7 +7,7 @@
     //Query nativa do SQL
     $sql = "SELECT * FROM courses";
 
-    //Executa a query e armaneza os dadno na varipavel $execute
+    //Executa a query e armaneza os dados na variável $execute
     $execute = mysqli_query($connection, $sql);
 
     
@@ -17,13 +17,17 @@
     while($line = mysqli_fetch_assoc($execute)) {
         $courses[$i]['id'] = $line['id'];
         $courses[$i]['name'] = $line['name'];
-        $courses[$i]['course_value'] = $line['course_value'];
+        $courses[$i]['value'] = $line['course_value'];
 
         $i++;
     }
 
-    json_encode(['courses'=>$courses]);
+    echo json_encode(['courses'=>$courses]);
 
-    var_dump($courses);
+    //header('Content-Type: application/json');
+
+    //var_dump($courses);
+
+    mysqli_close($connection);
 ?>
 

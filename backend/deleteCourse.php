@@ -9,10 +9,12 @@
     $getDataCourse = json_decode($getData);
 
     //Separa os dados
-    $idCourse = $getDataCourse->$courses->id;
+    $idCourse = $getDataCourse->id;
 
     //Query sql para cadastrar
-    $sql = "DELETE FROM courses WHERE id = $idCourse";
+    $sql = "DELETE FROM courses WHERE id = '$idCourse'";
     mysqli_query($connection, $sql);
+
+    mysqli_close($connection);
 
 ?>

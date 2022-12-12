@@ -23,6 +23,8 @@
         'course_value' => $courseValue   
     ]
 
-    json_encode(['course'] => $course);
+    echo json_encode(['course'] => $course);
+
+    mysqli_close($connection);
 
 ?>
