@@ -1,0 +1,29 @@
+<form action="">
+    <label>
+        Curso
+        <input type="text" name="nameCourse" [(ngModel)]="course.name">
+    </label>
+
+    <br/>
+
+    <label>
+        Valor
+        <input type="text" name="valueCourse" [(ngModel)]="course.value">
+    </label>
+
+    <br/>
+
+    <button (click)="courseRegister(this.course)">Cadastrar Curso</button>
+    <button (click)="courseView()">Visualizar Curso</button>
+    <button (click)="courseUpdate(this.course)">Atualizar Curso</button>
+    <button (click)="courseDelete(this.course)">Deletar Curso</button>
+</form>
+
+<table border="1">
+    <tr *ngFor="let course of courses">
+        <td>Id: {{ course.id }}</td>
+        <td>Nome: {{ course.name }}</td>
+        <td>Valor: {{ course.value | currency:"BRL" }}</td>
+        <td><button (click)="selectCourse(course)">Selecionar Curso</button></td>
+    </tr>
+</table>

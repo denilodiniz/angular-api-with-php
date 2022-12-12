@@ -1,0 +1,17 @@
+button, label {
+    display: block;
+    width: 120px;
+    height: 30px;
+    margin: 15px;
+}
+
+table {
+    margin: 15px;
+    width: auto;
+    height: 30px;
+    text-align: center;
+}
+
+td {
+    padding: 0px 20px;
+}
